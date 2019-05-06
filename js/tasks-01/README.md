@@ -1,5 +1,5 @@
 # Основы JavaScript
-## capitalize
+## [capitalize](./capitalize.js)
 Напишите функцию capitalize(input), возвращающую копию строки input,
 в которой каждое слово начинается с заглавной буквы.
 
@@ -13,7 +13,7 @@ capitalize('Use the force, Luke') === 'Use The Force, Luke'
 @param  {string} input строка с произвольным предложением.<br/>
 @return {string}
 
-## getMinMax
+## [getMinMax](./getMinMax.js)
 Напишите функцию getMinMax(input), принимающую строку input,
 и ищущую в ней максимальное и минимальное числа.
 
@@ -29,7 +29,7 @@ getMinMax('"To Infinity and beyond", - repeated Buzz Lightyear 4 times in a row'
 @param  {string} input входная строка<br/>
 @return {{min: number, max: number}} объект с минимумом и максимумом
 
-## limitCalls
+## [limitCalls](./limitCalls.js)
 Напишите функцию limitCalls(fn, maxCalls), принимающую функцию fn,
 и возвращающую новую функцию, которую можно вызвать не более
 указанного в maxCalls количества раз.
@@ -48,7 +48,7 @@ limitedLog(); // undefined
 @param  {number} maxCalls максимальное количество вызовов<br/>
 @return {Function}
 
-## multiple
+## [multiple](./multiple.js)
 Напишите функцию multiple(a, b), умножающую число a на число b,
 не используя оператор "\*" или метод Math.imul.
 
@@ -61,7 +61,7 @@ multiple(0, 0) === 0
 @param  {number} b любое целое число<br/>
 @return {number}
 
-## passwordCheck
+## [passwordCheck](./passwordCheck.js)
 Напишите функцию passwordCheck(password), принимающую строку password
 и проверяющую её на сложность. Если сложность достаточна, вернуть true,
 иначе - false.
@@ -80,7 +80,7 @@ passwordCheck('This is the 7th password I have come up with!') === true
 @param  {string} password пароль<br/>
 @return {boolean}
 
-## rle
+## [rle](./rle.js)
 Напишите функцию rle(input), реализующую примитивное RLE-сжатие входящей строки input.
 Подробнее об RLE: https://ru.wikipedia.org/wiki/Кодирование_длин_серий
 
@@ -93,7 +93,7 @@ rle('BCCDDDEEEE') === 'BC2D3E4'
 @param  {string} input<br/>
 @return {string}
 
-## sum
+## [sum](./sum.js)
 Напишите функцию sum(x), вычисляющую суммы подобным образом:  
 sum() === 0<br/>
 sum(1)(2)() === 3<br/>
