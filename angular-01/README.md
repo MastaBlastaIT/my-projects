@@ -1,4 +1,4 @@
-# frontend-projects
+# angular-01
 
 ## Маскировочный пайп
 
