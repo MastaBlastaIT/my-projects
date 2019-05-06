@@ -27,16 +27,18 @@ export class CaseComponent implements OnInit {
         this.initForm();
     }
 
-    setPipe() {
-        const beforePipeVal: string = this.form.value.toPipeText;
-
-        const selectedOption: string = this.form.value.selectCase;
+    setForm(elementToSet: string = 'input') {
+        const value: string =
+            elementToSet === 'input'
+                ? this.form.value.toPipeText
+                : this.form.value.selectCase;
 
         if (this.form.value.invalid) {
             return;
         }
 
-        this.addCase.emit(beforePipeVal);
-        this.selectCase.emit(CaseNames[selectedOption]);
+        elementToSet === 'input'
+            ? this.addCase.emit(value)
+            : this.selectCase.emit(CaseNames[value]);
     }
 }

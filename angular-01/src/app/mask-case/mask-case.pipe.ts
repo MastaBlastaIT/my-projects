@@ -10,7 +10,7 @@ export class MaskCasePipe implements PipeTransform {
             str
                 .toLowerCase()
                 .split(' ')
-                .map(word => word.replace(word[0], word[0].toUpperCase()))
+                .map(word => (word ? word.replace(word[0], word[0].toUpperCase()) : ''))
                 .join(' ');
 
         switch (caseType) {
