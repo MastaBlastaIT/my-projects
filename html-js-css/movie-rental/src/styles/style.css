@@ -1,0 +1,486 @@
+body {
+  background: #1C1C1C;
+  font-family: Roboto;
+  font-style: normal;
+  margin: 0;
+}
+.loader {
+  display: none;
+  z-index: 100;
+  position: absolute;
+  top: 35vh;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+}
+.loaderAnimation {
+  display: inline-block;
+  -webkit-animation: spin 1s linear infinite;
+  -moz-animation: spin 1s linear infinite;
+  -o-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.crossButton {
+  display: none;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  line-height: 27px;
+  top: 1.4rem;
+  outline: none;
+  border: none;
+  background: none;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 64px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  cursor: url('../img/cursorPointer.png'), pointer;
+}
+.contentWrapper,
+.search {
+  display: flex;
+  height: auto;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.contentWrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  z-index: 1;
+}
+header {
+  width: 148px;
+  height: 28px;
+  left: 646px;
+  margin-top: 80px;
+  order: -1;
+}
+.searchResult {
+  width: 90vw;
+  text-align: left;
+  display: block;
+}
+.negResult,
+.posResult {
+  display: none;
+}
+.searchLine {
+  border-bottom: 0;
+  max-width: inherit;
+  display: block;
+  width: 628px;
+  height: 74px;
+  margin-top: 5em;
+  text-align: left;
+  -webkit-transition: width 1.5s;
+  -moz-transition: width 1.5s;
+  -o-transition: width 1.5s;
+  transition: width 1.5s;
+}
+.searchForm {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: flex-end;
+  border-bottom: 2px solid #FFFFFF;
+  padding-bottom: 1.5em;
+}
+.searchInput {
+  position: relative;
+  left: 3em;
+  top: 1em;
+  -webkit-transition: left 1.5s;
+  -moz-transition: left 1.5s;
+  -o-transition: left 1.5s;
+  transition: left 1.5s;
+  width: 628px;
+  height: 48px;
+  font-size: 24px;
+  font-weight: 300;
+  color: #FFFFFF;
+  background: url("../img/searchIcon.png") no-repeat;
+  padding-left: 2.5em;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+.searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+.searchHistory {
+  display: none;
+}
+.search {
+  order: 0;
+}
+.search_active,
+.search_active_hasNoResult,
+.search_active_hasResult {
+  display: flex;
+  height: auto;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  order: 0;
+  z-index: 2;
+}
+.search_active.search__history .searchHistory,
+.search_active_hasNoResult.search__history .searchHistory,
+.search_active_hasResult.search__history .searchHistory {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: 1em 0 0;
+}
+.search_active.search__history .searchHistory a,
+.search_active_hasNoResult.search__history .searchHistory a,
+.search_active_hasResult.search__history .searchHistory a {
+  padding: 6px 15px;
+  margin: 0 8px 8px 0;
+  background: rgba(255, 255, 255, 0.8);
+  line-height: 24px;
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: url('../img/cursorPointer.png'), pointer;
+}
+.search_active.search__history .searchHistory a:hover,
+.search_active_hasNoResult.search__history .searchHistory a:hover,
+.search_active_hasResult.search__history .searchHistory a:hover {
+  background: #FFFFFF;
+}
+.search_active.search__history .searchHistory a:active,
+.search_active_hasNoResult.search__history .searchHistory a:active,
+.search_active_hasResult.search__history .searchHistory a:active {
+  background: rgba(255, 255, 255, 0.4);
+}
+.search_active .searchInput,
+.search_active_hasNoResult .searchInput,
+.search_active_hasResult .searchInput {
+  left: 0;
+}
+.search_active .searchLine,
+.search_active_hasNoResult .searchLine,
+.search_active_hasResult .searchLine {
+  height: auto;
+  text-align: left;
+  width: 90vw;
+  border-bottom: 0;
+}
+.search_active .searchLine .searchForm,
+.search_active_hasNoResult .searchLine .searchForm,
+.search_active_hasResult .searchLine .searchForm {
+  border-color: yellow;
+}
+.search_active .searchLine .searchInput,
+.search_active_hasNoResult .searchLine .searchInput,
+.search_active_hasResult .searchLine .searchInput {
+  width: 90vw;
+}
+.search_active_hasResult .searchResult .negResult {
+  display: none;
+}
+.search_active_hasResult .searchResult .posResult {
+  display: inline-block;
+}
+.search_active_hasResult_scroll .searchLine {
+  overflow: hidden;
+  position: fixed;
+  top: -5em;
+  left: 0;
+  width: 100vw;
+  z-index: 3;
+  background: rgba(28, 28, 28, 0.8);
+  backdrop-filter: blur(4px);
+  text-align: left;
+  -webkit-transition: width 1.5s;
+  -moz-transition: width 1.5s;
+  -o-transition: width 1.5s;
+  transition: width 1.5s;
+}
+.search_active_hasResult_scroll .searchLine .searchForm,
+.search_active_hasResult_scroll .searchLine .searchInput {
+  position: relative;
+  width: inherit;
+}
+.search_active_hasResult_scroll .searchLine .searchForm {
+  top: -10px;
+  padding-left: 1em;
+}
+.search_active_hasResult_scroll .searchLine .searchInput::placeholder {
+  color: #FFFFFF;
+}
+.search_active_hasResult_scroll .searchLine .crossButtonOnFocus {
+  position: relative;
+  display: inline;
+  margin-left: auto;
+  margin-right: 8vw;
+  -webkit-transition: margin-left 1.5s;
+  -moz-transition: margin-left 1.5s;
+  -o-transition: margin-left 1.5s;
+  transition: margin-left 1.5s;
+}
+.search_active_hasResult_scroll .searchLine .crossButtonOnFocus + input,
+.search_active_hasResult_scroll .searchLine .crossButtonOnFocus:active + input,
+.search_active_hasResult_scroll .searchLine .crossButtonOnFocus:hover + input {
+  position: relative;
+  left: 0;
+}
+.search_active_hasResult_scroll .searchLine .crossButtonOnFocus:hover {
+  color: #FFFFFF;
+}
+.search_active_hasResult_scroll .searchLine .crossButtonOnFocus:active {
+  color: rgba(255, 255, 255, 0.8);
+}
+.search_active_hasResult_scroll ~ header {
+  display: none;
+}
+.search_active_hasResult_scroll ~ footer {
+  position: relative;
+  top: 100%;
+  margin-top: 3em;
+}
+.search_active_hasResult_scroll .searchResult {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  margin-top: 5em;
+  padding: 24px;
+}
+.search_active_hasResult_scroll .searchResult h1 {
+  display: none;
+}
+.search_active_hasNoResult .searchResult .negResult {
+  display: inline-block;
+}
+.search_active_hasNoResult .searchResult .posResult {
+  display: none;
+}
+.search_active .crossButton,
+.search_active_hasNoResult .crossButton,
+.search_active_hasResult .crossButton {
+  display: inline;
+  margin-left: auto;
+  -webkit-transition: margin-left 1.5s;
+  -moz-transition: margin-left 1.5s;
+  -o-transition: margin-left 1.5s;
+  transition: margin-left 1.5s;
+}
+.search_active .crossButton + input,
+.search_active_hasNoResult .crossButton + input,
+.search_active_hasResult .crossButton + input,
+.search_active .crossButton:active + input,
+.search_active_hasNoResult .crossButton:active + input,
+.search_active_hasResult .crossButton:active + input,
+.search_active .crossButton:hover + input,
+.search_active_hasNoResult .crossButton:hover + input,
+.search_active_hasResult .crossButton:hover + input {
+  position: relative;
+  left: 0;
+}
+.search_active .crossButton:hover,
+.search_active_hasNoResult .crossButton:hover,
+.search_active_hasResult .crossButton:hover {
+  color: #FFFFFF;
+}
+.search_active .crossButton:active,
+.search_active_hasNoResult .crossButton:active,
+.search_active_hasResult .crossButton:active {
+  color: rgba(255, 255, 255, 0.8);
+}
+.resultText {
+  color: #FFFFFF;
+}
+.resultFilms {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.resultFilms .filmData {
+  width: 302px;
+  height: 434px;
+  margin: 0 24px 24px 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.24);
+}
+.filmName {
+  font-weight: bold;
+  line-height: 36px;
+  font-size: 24px;
+}
+.filmGenreAndYear {
+  font-weight: normal;
+  line-height: 24px;
+  font-size: 16px;
+}
+.stillLoading .filmName {
+  position: relative;
+  left: 20px;
+  top: 330px;
+  width: 246px;
+  height: 24px;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+}
+.stillLoading .filmGenreAndYear {
+  position: relative;
+  left: 20px;
+  top: 330px;
+  width: 156px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+}
+.dataLoaded,
+.descriptionReady {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  color: rgba(255, 255, 255, 0.24);
+  cursor: url('../img/cursorPointer.png'), pointer;
+}
+.dataLoaded .blurBlock,
+.descriptionReady .blurBlock {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: 12px;
+}
+.dataLoaded .filmGenreAndYear,
+.descriptionReady .filmGenreAndYear {
+  display: flex;
+  width: 262px;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+}
+.dataLoaded .filmName,
+.descriptionReady .filmName {
+  margin-top: auto;
+  width: 260px;
+}
+.dataLoaded .filmGenre,
+.descriptionReady .filmGenre {
+  width: 168px;
+}
+.dataLoaded .filmGenreAndYear,
+.descriptionReady .filmGenreAndYear,
+.dataLoaded .filmName,
+.descriptionReady .filmName,
+.dataLoaded .filmRating,
+.descriptionReady .filmRating {
+  position: relative;
+}
+.dataLoaded .filmGenreAndYear,
+.descriptionReady .filmGenreAndYear,
+.dataLoaded .filmName,
+.descriptionReady .filmName {
+  left: 20px;
+}
+.descriptionReady .filmImg {
+  display: none;
+}
+.dataLoaded .filmImg {
+  width: inherit;
+  height: inherit;
+  border-radius: 12px;
+  position: absolute;
+  display: inline;
+  z-index: 3;
+  left: 0;
+}
+.dataLoaded .filmGenreAndYear,
+.dataLoaded .filmName,
+.dataLoaded .filmRating {
+  display: none;
+}
+.dataLoaded .filmRating {
+  font-weight: normal;
+  line-height: 36px;
+  font-size: 24px;
+}
+.dataLoaded:hover .blurBlock,
+.descriptionReady:hover .blurBlock {
+  display: inline-block;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 26.43%, rgba(0, 0, 0, 0.8) 72.41%);
+  backdrop-filter: blur(2px);
+  border-radius: 12px;
+}
+.dataLoaded:hover .filmName,
+.descriptionReady:hover .filmName,
+.dataLoaded:hover .filmRating,
+.descriptionReady:hover .filmRating {
+  color: #FFFFFF;
+  display: block;
+  z-index: 3;
+}
+.dataLoaded:hover .filmImg,
+.descriptionReady:hover .filmImg {
+  z-index: 1;
+}
+.dataLoaded:hover .filmGenreAndYear,
+.descriptionReady:hover .filmGenreAndYear {
+  display: flex;
+  color: rgba(255, 255, 255, 0.4);
+  z-index: 3;
+}
+.dataLoaded:hover .filmGenreAndYear .filmYear,
+.descriptionReady:hover .filmGenreAndYear .filmYear {
+  color: #FFFFFF;
+}
+.rate_good,
+.rate_high,
+.rate_notGood {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+footer {
+  position: absolute;
+  bottom: 16px;
+  margin: auto auto 0;
+  order: 1;
+}
+.hasResultFooter {
+  position: relative;
+  top: 100%;
+  margin-top: 3em;
+}
+.tinkoffSign {
+  font-weight: normal;
+  line-height: normal;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.4);
+}

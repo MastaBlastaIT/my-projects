@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+
+  <link rel='stylesheet' href='./src/styles/style.css'>
+
+  <script src='./src/index.js' type="module"></script>
+
+  <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+
+  <title>TFS:Task05</title>
+</head>
+
+<body>
+  <div class='contentWrapper'>
+    <div class='loader'></div>
+    <!-- states:
+    1. search,
+    2. search_active,
+     {
+        2.a. _hasResult {
+          _scroll
+        }
+        2.b. _hasNoResult
+    }
+
+    add history:
+    search__history
+  -->
+    <div class='search search__history'>
+      <div class='searchLine'>
+        <form autocomplete='off' class='searchForm'>
+          <input class='crossButton' type='button' id='clearButton' value='+'>
+
+          <input class='searchInput' type='text' name='findFilm' id='findFilm' placeholder='Поиск фильмов по жанрам и актерам'>
+        </form>
+
+        <div class='searchHistory'>
+          <a>How I Met Your Mother</a>
+          <a>Robert De Niro</a>
+          <a>Ryan Gosling</a>
+          <a>Driver</a>
+          <a>Bridget Jones</a>
+        </div>
+      </div>
+
+      <div class='searchResult'>
+        <h1 class='resultText posResult'></h1>
+
+        <h1 class='resultText negResult'>Мы не поняли о чем речь ¯\_(ツ)_/¯ - См. консоль</h1>
+
+        <div class='resultFilms'>
+          <!--
+          <div class='filmData'>
+            <div class='stillLoading'>
+              <div class='filmName'></div>
+
+              <div class='filmGenreAndYear'></div>
+            </div>
+          </div>
+
+          <div class='filmData'>
+            <div class='dataLoaded'>
+              <div class='blurBlock'>
+              </div>
+
+              <img class='filmImg' src='src/img/dirtyGrandpa.jpg'>
+              <div class='filmName'>
+                <div class='filmRating'>
+                  <p>
+                    <img class='rate_notGood' src='src/img/notGoodRate.png'>
+
+                    <span>6.1</span>
+                  </p>
+                </div>
+                <span>Дедушка лёгкого поведения</span>
+              </div>
+
+              <div class='filmGenreAndYear'>
+                <div class='filmGenre'>
+                  <span>Комедия</span>
+                </div>
+
+                <div class='filmYear'>
+                  <span>2016</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>-->
+        </div>
+      </div>
+
+      <header>
+        <img src='src/img/logoTP.png' alt='Тинькофф Прокат Logo'>
+      </header>
+
+      <footer id='footer'>
+        <p class='tinkoffSign'>
+          &copy 2019 Тинькофф Прокат
+        </p>
+      </footer>
+    </div>
+</body>
+
+</html>

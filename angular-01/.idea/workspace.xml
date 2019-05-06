@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cdbc0b5-a4f7-423e-acc1-3ead7a9d5aee" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/tasks-03/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../js/tasks-03/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/tasks-03/makeRequests.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -110,6 +111,7 @@
         <option value="$PROJECT_DIR$/src/app/case/case.component.html" />
         <option value="$PROJECT_DIR$/src/app/app.component.spec.ts" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/../html-js-css/gateline-api-simple/script.js" />
       </list>
     </option>
   </component>
@@ -163,7 +165,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../html-js-css/gateline-api-simple/script.js" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
@@ -206,53 +208,6 @@
     </configuration>
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <module name="angular-01" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <module name="angular-01" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration name="Angular CLI Server" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -310,6 +265,7 @@
       <workItem from="1556274410519" duration="622000" />
       <workItem from="1556279581844" duration="45000" />
       <workItem from="1557128690930" duration="3174000" />
+      <workItem from="1557137136067" duration="30000" />
     </task>
     <task id="LOCAL-00001" summary="card pipe finished">
       <created>1555505162769</created>
@@ -385,13 +341,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57101000" />
+    <option name="totallyTimeSpent" value="57131000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20752628" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2097399" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -515,7 +471,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="edit README" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/card/card.component.spec.ts" />
     <entry file="file://$PROJECT_DIR$/src/app/pipe/pipe.component.css" />
     <entry file="file://$PROJECT_DIR$/src/app/case/case.component.css" />
     <entry file="file://$PROJECT_DIR$/src/app/card/services/card.service.ts" />
@@ -734,6 +689,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../html-js-css/gateline-api-simple/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="22" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
         </state>
       </provider>
     </entry>

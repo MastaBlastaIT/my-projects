@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+  <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <form id='payForm' enctype='multipart/form-data' action='https://simpleapi.sandbox.gateline.net:18610/pay' method='POST' target='myPopup'>
+    <input style='display:none' id='amount' name='amount' value='3.00'>
+    <input style='display:none' id='description' name='description' value='Оплата заказа'>
+    <input style='display:none' id='site' name='site'>
+    <input style='display:none' id='checksum' name='checksum'>
+  </form>
+
+  <div class='wpb_single_image wpb_content_element vc_align_center'>
+    <button class='invicta_button invicta-icon_position-left' onclick='SendRequest()' id='SendButton'>Открыть виджет для оплаты</button>
+  </div>
+
+  <div class='popup-back' id='popupBack'>
+    <div class='my-popup'>
+      <iframe frameborder='0' scrolling='no' class='my-popup' id='myPopup' name='myPopup'></iframe>
+    </div>
+  </div>
+
+  <script src='./script.js'></script>
+</body>
+
+</html>
