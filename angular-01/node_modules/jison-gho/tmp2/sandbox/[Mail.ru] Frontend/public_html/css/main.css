@@ -1,0 +1,20 @@
+.board {
+    display: table;
+    margin: 0 auto;
+    padding: 5px;
+    border-collapse: collapse;
+}
+
+.board-row {
+    display: table-row;
+}
+
+.board-cell {
+    display: table-cell;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
+.shaded {
+    background-color: black;
+}

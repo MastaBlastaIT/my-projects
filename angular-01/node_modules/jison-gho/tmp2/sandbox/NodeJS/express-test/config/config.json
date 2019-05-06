@@ -1,0 +1,27 @@
+{
+  "port": 3000,
+  "multer": {
+    "dest": "/webapp/uploads"
+  },
+  "mongoose": {
+    "url": "mongodb://localhost/chat",
+    "options": {
+      "server": {
+        "socketOptions": {
+          "keepAlive": 1
+        }
+      }
+    }
+  },
+  "session": {
+    "resave": true,
+    "saveUninitialized": true,
+    "secret": "EUQW352IRHNFASOPM14738ABNSVD231QWOE787WQNKSHAF",
+    "key": "sid",
+    "cookie": {
+      "path": "/",
+      "httpOnly": true,
+      "maxAge": null
+    }
+  }
+}

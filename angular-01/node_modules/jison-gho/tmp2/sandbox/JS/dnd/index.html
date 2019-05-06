@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.polyfill.io/v1/polyfill.js?features=Element.prototype.closest"></script>
+  <link rel="stylesheet" href="dnd.css">
+  <link rel="stylesheet" href="dragManager.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<body>
+<h2>Simple DnD</h2>
+<div class="browsers">
+  <div style="height:64px">
+    <img src="https://js.cx/browsers/chrome.svg" class="browsers__shape browsers__shape_many">
+    <img src="https://js.cx/browsers/firefox.svg" class="browsers__shape">
+    <img src="https://js.cx/browsers/ie.svg" class="browsers__shape">
+    <img src="https://js.cx/browsers/opera.svg" class="browsers__shape">
+    <img src="https://js.cx/browsers/safari.svg" class="browsers__shape">
+  </div>
+
+  <p>Move browser here:</p>
+
+  <div class="computer">
+    <div class="computer__pocket computer__pocket1"></div>
+    <div class="computer__pocket computer__pocket2"></div>
+  </div>
+</div>
+
+<h2>Tree DnD</h2>
+<ul class="tree">
+  <li><span>Root</span>
+    <ul>
+      <li><span>Node 1.1</span>
+        <ul>
+          <li><span>Node 1.1.1</span>
+            <ul>
+              <li><span>Node 1.1.1.1</span></li>
+            </ul>
+          </li>
+          <li><span>Node 1.1.2</span>
+            <ul>
+              <li><span>Node 1.1.2.1</span></li>
+              <li><span>Node 1.1.2.2</span></li>
+            </ul>
+
+          </li>
+        </ul>
+      </li>
+      <li><span>Node 1.2</span>
+        <ul>
+          <li><span>Node 1.2.1</span>
+            <ul>
+              <li><span>Node 1.2.1.1</span></li>
+              <li><span>Node 1.2.1.2</span></li>
+              <li><span>Node 1.2.1.3</span></li>
+            </ul>
+          </li>
+          <li><span>Node 1.2.2</span>
+            <ul>
+              <li><span>Node 1.2.2.1</span></li>
+              <li><span>Node 1.2.2.2</span></li>
+              <li><span>Node 1.2.2.3</span></li>
+              <li><span>Node 1.2.2.4</span></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<script src="./helpers.js"></script>
+<script src="./dragObject.js"></script>
+<script src="./treeDragObject.js"></script>
+<script src="./dropZone.js"></script>
+<script src="./dragZone.js"></script>
+<script src="./dragManager.js"></script>
+<script src="./treeDragZone.js"></script>
+<script src="./treeDropZone.js"></script>
+<script src="./binDropZone.js"></script>
+<script src="./dropZoneWrapper.js"></script>
+<script src="./binDropZoneWrapper.js"></script>
+<script src="./dragZoneWrapper.js"></script>
+
+<script>
+  let dragManager = new DragManager();
+
+//  let dropZone = new BinDropZone({
+//    container: qs('.computer'),
+//    pocketSelector: '.computer__pocket',
+//    onDragEndCallback: function(e, dragObject, pocket) {
+//      this._container.classList.add('computer-smile');
+//      setTimeout(() => {
+//        this._container.classList.remove('computer-smile');
+//      }, 200);
+//    }
+//  });
+
+//  let dragZone = new DragZone({
+//    container: qs('.browsers'),
+//    many: false,
+//    shapeSelector: '.browsers__shape',
+//    manyOverrideSelector: '.browsers__shape_many'
+//  });
+//  dragZone.addDropZone(dropZone);
+
+  let dropZone = $('.computer').binDropZone({
+    pocketSelector: '.computer__pocket',
+    dragend: function(data) {
+      this.classList.add('computer-smile');
+      setTimeout(() => {
+        this.classList.remove('computer-smile');
+      }, 200);
+    }
+  });
+
+  let dragZone = $('.browsers').dragZone({
+    many: false,
+    shapeSelector: '.browsers__shape',
+    shapeManySelector: '.browsers__shape_many',
+    allowedDropZones: [dropZone]
+  });
+//  dragZone.dragzone("addDropZone", dropZone);
+
+</script>
+
+<script>
+  let treeDragZone = new TreeDragZone({
+    container: qs('.tree'),
+    dragClone: true
+  });
+  let treeDropZone = new TreeDropZone({
+    container: qs('.tree'),
+    pocketSelector: '.tree__pocket'
+  });
+  treeDragZone.addDropZone(treeDropZone);
+  treeDragZone.addDropZone(dropZone[0].dropZone);
+
+  treeDropZone.appendSeparators();
+</script>
+
+
+</body>
+
+</html>

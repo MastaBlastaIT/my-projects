@@ -1,0 +1,25 @@
+<div class="navbar navbar-default container">
+    <div class="navbar-header">
+        <button class="btn btn-success navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="glyphicon glyphicon-chevron-down"/>
+        </button>
+        <div class="navbar-brand"><span class="glyphicon glyphicon-tree-deciduous"></span></div>
+        <div class="navbar-brand"><%= brand %></div>
+    </div>
+    <nav class="navbar-collapse collapse navbar-left" role="navigation">
+        <ul class="nav navbar-nav">
+            <li><a href="/" class="btn nav__home">Home <span class="glyphicon glyphicon-home"/></a></li>
+            <li><a href="/users" class="btn nav__users">Users</a></li>
+            <li><a href="/chat" class="btn nav__chat">Chat</a></li>
+        </ul>
+    </nav>
+    <div class="navbar-header navbar-right">
+        <div class="navbar-text">
+            <% if (user) { %>
+            Hello, <%= user.get('username') %>! Click <a href="" id="logout">here</a> to logout.
+            <% } else { %>
+            Click <a href="/login">here</a> to log in.
+            <% } %>
+        </div>
+    </div>
+</div>

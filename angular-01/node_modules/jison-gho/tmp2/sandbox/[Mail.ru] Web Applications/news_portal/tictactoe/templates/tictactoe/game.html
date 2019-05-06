@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block stylesheet %}
+    <style type="text/css">
+        .tictactoe-table {
+            width: 120px;
+            border-width: 2px;
+        }
+
+        .tictactoe-cell {
+            background-color: #f8f8f8;
+            width: 38px;
+            height: 38px;
+            text-align: center;
+        }
+
+        .tictactoe-latest-move {
+            background-color: #f89497;
+        }
+
+    </style>
+{% endblock %}
+
+{% block title %}
+    Tictactoe game: {{ user.username }} vs {{ opponent.username }}
+{% endblock %}
+
+{% block content %}
+    <p>
+        {% if game.status == "A" %}
+            {% if my_move %}
+                It is your move.
+            {% else %}
+                Wait for your opponent to move.
+            {% endif %}
+            Your ticker is {% if game.first_player_id == user.id %}X{% else %}O{% endif %}.
+        {% else %}
+            The game has ended. Your ticker was {% if game.first_player_id == user.id %}X{% else %}O{% endif %}.
+            {% if game.is_draw %}
+                It is a draw.
+            {% else %}
+                {% if game.winner == user %}
+                    You won!
+                {% else %}
+                    You lost!
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    </p>
+    {% if game.move_set.count %}
+        <p>The last move was made by {{ latest_move.player }} at {{ latest_move.timestamp }} and it was ({{ latest_move.y|add:1 }},{{ latest_move.x|add:1 }}). It is highlighted on the board.</p>
+    {% else %}
+        <p>This is the first move.</p>
+    {% endif %}
+
+    <div>
+        <table class="table table-bordered tictactoe-table">
+            {% for line in game.as_board %}
+                <tr data-y="{{ forloop.counter }}">
+                    {% for square in line %}
+                        <td data-x="{{ forloop.counter }}"
+                            class="tictactoe-cell
+                            {% if not square %}empty{% endif %}
+                            {% if forloop.parentloop.counter0 == game.latest_move.y and forloop.counter0 == game.latest_move.x %}tictactoe-latest-move{% endif %}"
+                        >
+                            {{ square }}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        {% block moveform %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block javascript %}
+    {{ block.super }}
+{% endblock %}

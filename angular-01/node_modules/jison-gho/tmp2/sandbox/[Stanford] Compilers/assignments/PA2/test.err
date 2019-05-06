@@ -1,0 +1,797 @@
+(* is handled by rule #12
+ models one-dimensional cellular automaton on a circle of finite radius is handled by rule #15
+
+ is handled by rule #16
+   arrays are faked as Strings, is handled by rule #15
+
+ is handled by rule #16
+   X's respresent live cells, dots represent dead cells, is handled by rule #15
+
+ is handled by rule #16
+   no error checking is done  is handled by rule #15
+*) is handled by rule #14
+
+ is handled by rule #7
+class is handled by rule #33
+  is handled by rule #17
+CellularAutomaton is handled by rule #35
+  is handled by rule #17
+inherits is handled by rule #34
+  is handled by rule #17
+IO is handled by rule #35
+  is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+     is handled by rule #17
+population_map is handled by rule #36
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+String is handled by rule #35
+; is handled by rule #50
+
+ is handled by rule #7
+    is handled by rule #17
+
+ is handled by rule #7
+     is handled by rule #17
+init is handled by rule #36
+( is handled by rule #50
+map is handled by rule #36
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+String is handled by rule #35
+) is handled by rule #50
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+SELF_TYPE is handled by rule #35
+  is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+             is handled by rule #17
+population_map is handled by rule #36
+  is handled by rule #17
+<- is handled by rule #3
+  is handled by rule #17
+map is handled by rule #36
+; is handled by rule #50
+
+ is handled by rule #7
+             is handled by rule #17
+self is handled by rule #36
+; is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+} is handled by rule #50
+
+ is handled by rule #7
+     is handled by rule #17
+} is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7
+    is handled by rule #17
+
+ is handled by rule #7
+     is handled by rule #17
+print is handled by rule #36
+( is handled by rule #50
+) is handled by rule #50
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+SELF_TYPE is handled by rule #35
+  is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+             is handled by rule #17
+out_string is handled by rule #36
+( is handled by rule #50
+population_map is handled by rule #36
+. is handled by rule #50
+concat is handled by rule #36
+( is handled by rule #50
+" is handled by rule #37
+\n is handled by rule #41
+" is handled by rule #38
+) is handled by rule #50
+) is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7
+             is handled by rule #17
+self is handled by rule #36
+; is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+} is handled by rule #50
+
+ is handled by rule #7
+     is handled by rule #17
+} is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7
+    is handled by rule #17
+
+ is handled by rule #7
+     is handled by rule #17
+num_cells is handled by rule #36
+( is handled by rule #50
+) is handled by rule #50
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+Int is handled by rule #35
+  is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+population_map is handled by rule #36
+. is handled by rule #50
+length is handled by rule #36
+( is handled by rule #50
+) is handled by rule #50
+
+ is handled by rule #7
+     is handled by rule #17
+} is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7
+    is handled by rule #17
+
+ is handled by rule #7
+     is handled by rule #17
+cell is handled by rule #36
+( is handled by rule #50
+position is handled by rule #36
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+Int is handled by rule #35
+) is handled by rule #50
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+String is handled by rule #35
+  is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+population_map is handled by rule #36
+. is handled by rule #50
+substr is handled by rule #36
+( is handled by rule #50
+position is handled by rule #36
+, is handled by rule #50
+  is handled by rule #17
+1 is handled by rule #4
+) is handled by rule #50
+
+ is handled by rule #7
+     is handled by rule #17
+} is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7
+    is handled by rule #17
+
+ is handled by rule #7
+     is handled by rule #17
+cell_left_neighbor is handled by rule #36
+( is handled by rule #50
+position is handled by rule #36
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+Int is handled by rule #35
+) is handled by rule #50
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+String is handled by rule #35
+  is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+if is handled by rule #19
+  is handled by rule #17
+position is handled by rule #36
+  is handled by rule #17
+= is handled by rule #50
+  is handled by rule #17
+0 is handled by rule #4
+  is handled by rule #17
+then is handled by rule #25
+
+ is handled by rule #7
+             is handled by rule #17
+cell is handled by rule #36
+( is handled by rule #50
+num_cells is handled by rule #36
+( is handled by rule #50
+) is handled by rule #50
+  is handled by rule #17
+- is handled by rule #50
+  is handled by rule #17
+1 is handled by rule #4
+) is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+else is handled by rule #18
+
+ is handled by rule #7
+             is handled by rule #17
+cell is handled by rule #36
+( is handled by rule #50
+position is handled by rule #36
+  is handled by rule #17
+- is handled by rule #50
+  is handled by rule #17
+1 is handled by rule #4
+) is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+fi is handled by rule #20
+
+ is handled by rule #7
+     is handled by rule #17
+} is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7
+    is handled by rule #17
+
+ is handled by rule #7
+     is handled by rule #17
+cell_right_neighbor is handled by rule #36
+( is handled by rule #50
+position is handled by rule #36
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+Int is handled by rule #35
+) is handled by rule #50
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+String is handled by rule #35
+  is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+if is handled by rule #19
+  is handled by rule #17
+position is handled by rule #36
+  is handled by rule #17
+= is handled by rule #50
+  is handled by rule #17
+num_cells is handled by rule #36
+( is handled by rule #50
+) is handled by rule #50
+  is handled by rule #17
+- is handled by rule #50
+  is handled by rule #17
+1 is handled by rule #4
+  is handled by rule #17
+then is handled by rule #25
+
+ is handled by rule #7
+             is handled by rule #17
+cell is handled by rule #36
+( is handled by rule #50
+0 is handled by rule #4
+) is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+else is handled by rule #18
+
+ is handled by rule #7
+             is handled by rule #17
+cell is handled by rule #36
+( is handled by rule #50
+position is handled by rule #36
+  is handled by rule #17
++ is handled by rule #50
+  is handled by rule #17
+1 is handled by rule #4
+) is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+fi is handled by rule #20
+
+ is handled by rule #7
+     is handled by rule #17
+} is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7
+    is handled by rule #17
+
+ is handled by rule #7
+     is handled by rule #17
+(* is handled by rule #12
+ a cell will live if exactly 1 of itself and it's immediate is handled by rule #15
+
+ is handled by rule #16
+       neighbors are alive  is handled by rule #15
+*) is handled by rule #14
+
+ is handled by rule #7
+     is handled by rule #17
+cell_at_next_evolution is handled by rule #36
+( is handled by rule #50
+position is handled by rule #36
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+Int is handled by rule #35
+) is handled by rule #50
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+String is handled by rule #35
+  is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+if is handled by rule #19
+  is handled by rule #17
+( is handled by rule #50
+if is handled by rule #19
+  is handled by rule #17
+cell is handled by rule #36
+( is handled by rule #50
+position is handled by rule #36
+) is handled by rule #50
+  is handled by rule #17
+= is handled by rule #50
+  is handled by rule #17
+" is handled by rule #37
+X is handled by rule #47
+" is handled by rule #38
+  is handled by rule #17
+then is handled by rule #25
+  is handled by rule #17
+1 is handled by rule #4
+  is handled by rule #17
+else is handled by rule #18
+  is handled by rule #17
+0 is handled by rule #4
+  is handled by rule #17
+fi is handled by rule #20
+
+ is handled by rule #7
+             is handled by rule #17
++ is handled by rule #50
+  is handled by rule #17
+if is handled by rule #19
+  is handled by rule #17
+cell_left_neighbor is handled by rule #36
+( is handled by rule #50
+position is handled by rule #36
+) is handled by rule #50
+  is handled by rule #17
+= is handled by rule #50
+  is handled by rule #17
+" is handled by rule #37
+X is handled by rule #47
+" is handled by rule #38
+  is handled by rule #17
+then is handled by rule #25
+  is handled by rule #17
+1 is handled by rule #4
+  is handled by rule #17
+else is handled by rule #18
+  is handled by rule #17
+0 is handled by rule #4
+  is handled by rule #17
+fi is handled by rule #20
+
+ is handled by rule #7
+             is handled by rule #17
++ is handled by rule #50
+  is handled by rule #17
+if is handled by rule #19
+  is handled by rule #17
+cell_right_neighbor is handled by rule #36
+( is handled by rule #50
+position is handled by rule #36
+) is handled by rule #50
+  is handled by rule #17
+= is handled by rule #50
+  is handled by rule #17
+" is handled by rule #37
+X is handled by rule #47
+" is handled by rule #38
+  is handled by rule #17
+then is handled by rule #25
+  is handled by rule #17
+1 is handled by rule #4
+  is handled by rule #17
+else is handled by rule #18
+  is handled by rule #17
+0 is handled by rule #4
+  is handled by rule #17
+fi is handled by rule #20
+
+ is handled by rule #7
+             is handled by rule #17
+= is handled by rule #50
+  is handled by rule #17
+1 is handled by rule #4
+) is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+then is handled by rule #25
+
+ is handled by rule #7
+             is handled by rule #17
+" is handled by rule #37
+X is handled by rule #47
+" is handled by rule #38
+
+ is handled by rule #7
+         is handled by rule #17
+else is handled by rule #18
+
+ is handled by rule #7
+             is handled by rule #17
+' is handled by rule #51
+. is handled by rule #50
+' is handled by rule #51
+
+ is handled by rule #7
+         is handled by rule #17
+fi is handled by rule #20
+
+ is handled by rule #7
+     is handled by rule #17
+} is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7
+    is handled by rule #17
+
+ is handled by rule #7
+     is handled by rule #17
+evolve is handled by rule #36
+( is handled by rule #50
+) is handled by rule #50
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+SELF_TYPE is handled by rule #35
+  is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+( is handled by rule #50
+let is handled by rule #22
+  is handled by rule #17
+position is handled by rule #36
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+Int is handled by rule #35
+  is handled by rule #17
+in is handled by rule #21
+
+ is handled by rule #7
+         is handled by rule #17
+( is handled by rule #50
+let is handled by rule #22
+  is handled by rule #17
+num is handled by rule #36
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+Int is handled by rule #35
+  is handled by rule #17
+<- is handled by rule #3
+  is handled by rule #17
+num_cells is handled by rule #36
+[ is handled by rule #51
+] is handled by rule #51
+  is handled by rule #17
+in is handled by rule #21
+
+ is handled by rule #7
+         is handled by rule #17
+( is handled by rule #50
+let is handled by rule #22
+  is handled by rule #17
+temp is handled by rule #36
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+String is handled by rule #35
+  is handled by rule #17
+in is handled by rule #21
+
+ is handled by rule #7
+             is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+                 is handled by rule #17
+while is handled by rule #26
+  is handled by rule #17
+position is handled by rule #36
+  is handled by rule #17
+< is handled by rule #50
+  is handled by rule #17
+num is handled by rule #36
+  is handled by rule #17
+loop is handled by rule #23
+
+ is handled by rule #7
+                     is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+                         is handled by rule #17
+temp is handled by rule #36
+  is handled by rule #17
+<- is handled by rule #3
+  is handled by rule #17
+temp is handled by rule #36
+. is handled by rule #50
+concat is handled by rule #36
+( is handled by rule #50
+cell_at_next_evolution is handled by rule #36
+( is handled by rule #50
+position is handled by rule #36
+) is handled by rule #50
+) is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7
+                         is handled by rule #17
+position is handled by rule #36
+  is handled by rule #17
+<- is handled by rule #3
+  is handled by rule #17
+position is handled by rule #36
+  is handled by rule #17
++ is handled by rule #50
+  is handled by rule #17
+1 is handled by rule #4
+; is handled by rule #50
+
+ is handled by rule #7
+                     is handled by rule #17
+} is handled by rule #50
+
+ is handled by rule #7
+                 is handled by rule #17
+pool is handled by rule #24
+; is handled by rule #50
+
+ is handled by rule #7
+                 is handled by rule #17
+population_map is handled by rule #36
+  is handled by rule #17
+<- is handled by rule #3
+  is handled by rule #17
+temp is handled by rule #36
+; is handled by rule #50
+
+ is handled by rule #7
+                 is handled by rule #17
+self is handled by rule #36
+; is handled by rule #50
+
+ is handled by rule #7
+             is handled by rule #17
+} is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+) is handled by rule #50
+  is handled by rule #17
+) is handled by rule #50
+  is handled by rule #17
+) is handled by rule #50
+
+ is handled by rule #7
+     is handled by rule #17
+} is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7
+} is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7
+
+ is handled by rule #7
+class is handled by rule #33
+  is handled by rule #17
+Main is handled by rule #35
+  is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+     is handled by rule #17
+cells is handled by rule #36
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+CellularAutomaton is handled by rule #35
+; is handled by rule #50
+
+ is handled by rule #7
+    is handled by rule #17
+
+ is handled by rule #7
+     is handled by rule #17
+main is handled by rule #36
+( is handled by rule #50
+) is handled by rule #50
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+SELF_TYPE is handled by rule #35
+  is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+             is handled by rule #17
+cells is handled by rule #36
+  is handled by rule #17
+<- is handled by rule #3
+  is handled by rule #17
+( is handled by rule #50
+new is handled by rule #30
+  is handled by rule #17
+CellularAutomaton is handled by rule #35
+) is handled by rule #50
+. is handled by rule #50
+init is handled by rule #36
+( is handled by rule #50
+" is handled by rule #37
+         X          is handled by rule #47
+" is handled by rule #38
+) is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7
+             is handled by rule #17
+cells is handled by rule #36
+. is handled by rule #50
+print is handled by rule #36
+( is handled by rule #50
+) is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7
+             is handled by rule #17
+( is handled by rule #50
+let is handled by rule #22
+  is handled by rule #17
+countdown is handled by rule #36
+  is handled by rule #17
+: is handled by rule #50
+  is handled by rule #17
+Int is handled by rule #35
+  is handled by rule #17
+<- is handled by rule #3
+  is handled by rule #17
+20 is handled by rule #4
+  is handled by rule #17
+in is handled by rule #21
+
+ is handled by rule #7
+                 is handled by rule #17
+while is handled by rule #26
+  is handled by rule #17
+countdown is handled by rule #36
+  is handled by rule #17
+> is handled by rule #51
+  is handled by rule #17
+0 is handled by rule #4
+  is handled by rule #17
+loop is handled by rule #23
+
+ is handled by rule #7
+                     is handled by rule #17
+{ is handled by rule #50
+
+ is handled by rule #7
+                         is handled by rule #17
+cells is handled by rule #36
+. is handled by rule #50
+evolve is handled by rule #36
+( is handled by rule #50
+) is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7
+                         is handled by rule #17
+cells is handled by rule #36
+. is handled by rule #50
+print is handled by rule #36
+( is handled by rule #50
+) is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7
+                         is handled by rule #17
+countdown is handled by rule #36
+  is handled by rule #17
+<- is handled by rule #3
+  is handled by rule #17
+countdown is handled by rule #36
+  is handled by rule #17
+- is handled by rule #50
+  is handled by rule #17
+1 is handled by rule #4
+; is handled by rule #50
+
+ is handled by rule #7
+                     is handled by rule #17
+
+ is handled by rule #7
+                 is handled by rule #17
+pool is handled by rule #24
+
+ is handled by rule #7
+             is handled by rule #17
+) is handled by rule #50
+; is handled by rule #50
+   is handled by rule #17
+(* is handled by rule #12
+ end let countdown  is handled by rule #15
+*) is handled by rule #14
+
+ is handled by rule #7
+             is handled by rule #17
+self is handled by rule #36
+; is handled by rule #50
+
+ is handled by rule #7
+         is handled by rule #17
+} is handled by rule #50
+
+ is handled by rule #7
+     is handled by rule #17
+} is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7
+} is handled by rule #50
+; is handled by rule #50
+
+ is handled by rule #7

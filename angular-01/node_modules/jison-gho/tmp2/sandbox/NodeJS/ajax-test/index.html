@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <button onclick="loadPhones()" id="button">Загрузить phones.json!</button>
+    <div id="phones-list"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script type="text/template" id="phones-template">
+        <ul>
+            <% _.forEach(phones, function(phone){ %>
+                <li>
+                    <%=phone.name%>
+                </li>
+                <% }); %>
+        </ul>
+    </script>
+
+    <p></p>
+    <button onclick="loadDigits()" id="button2">Загрузить digits!</button>
+    <div id="digits-log"></div>
+
+    <p></p>
+    <form name="upload">  <!-- action определен кастомным скриптом в функции upload() -->
+        <input type="file" name="myfile">
+        <label><input type="checkbox" name="is-dummy"> Dummy mode?</label>
+        <p></p>
+        <input type="submit" value="Upload">
+        <button type="button" id="upload-pause" onclick="uploader.pause()">Пауза</button>
+    </form>
+    <div id="upload-log"></div>
+
+    <script src="load-phones.js"></script>
+    <script src="load-digits.js"></script>
+    <script src="uploader.js"></script>
+    <script src="upload.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<form [formGroup]="form">
+  <div class="card-body form-group">
+    <input type="text"
+           formControlName="cardNumber"
+           class="form-control"
+           placeholder="Номер карты"
+           maxlength="16">
+
+    <div *ngIf="form.get('cardNumber').dirty || form.get('cardNumber').touched"
+         class = "alert"
+         [class.alert-danger] = "form.get('cardNumber').errors.isError"
+         [class.alert-success] = "form.get('cardNumber').errors.isSuccess">
+
+      <div *ngIf="form.get('cardNumber').errors.validError">
+        {{form.get('cardNumber').errors.validErrorText}}
+      </div>
+
+      <div *ngIf="form.get('cardNumber').errors.lengthError">
+        {{form.get('cardNumber').errors.lengthErrorText}}
+      </div>
+
+      <div *ngIf="form.get('cardNumber').errors.valueError">
+        {{form.get('cardNumber').errors.valueErrorText}}
+      </div>
+
+      <div *ngIf="form.get('cardNumber').errors.isSuccess">
+        {{form.get('cardNumber').errors.successText}}
+      </div>
+    </div>
+  </div>
+  <div class="card-body form-group">
+    <button type="button"
+            class="btn btn-warning"
+            [disabled] = "form.get('cardNumber').errors.isError"
+            (click)="onClick()">
+      Применить Pipe
+    </button>
+  </div>
+</form>

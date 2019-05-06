@@ -1,0 +1,88 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>News site (django tutorial)</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="{%static 'core/chosen.css'%}"/>
+    {% block stylesheet %}
+    {% endblock %}
+
+</head>
+<body>
+    <header class="container navbar-inverse">
+        <div class="navbar-header">
+            <img src="{% static 'core/Earth.png' %}" width="50" height="50" class="navbar-brand"/>
+            <button class="btn btn-success navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="glyphicon glyphicon-chevron-down"/>
+            </button>
+        </div>
+        <nav class="navbar-collapse collapse navbar-left">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/" class="btn">Home <span class="glyphicon glyphicon-home"/></a></li>
+                <li id="nav-hello-btn"><a href="/hello/1?name=petr" class="btn">Hello world</a></li>
+                <li id="nav-create-btn"><a href="/create" class="btn">Create article</a></li>
+                <li id="nav-invite-btn"><a href="{% url 'tictactoe:invite' %}" class="btn">Invite user</a></li>
+                <li><a href="/admin" class="btn">Admin</a></li>
+            </ul>
+        </nav>
+        <div class="navbar-header navbar-right">
+            <div class="navbar-text">
+                {% if user.is_authenticated %}
+                Hello, {{ user }}! <a href="{% url 'logout' %}">logout</a>
+                {% else %}
+                You are not logged in. <a href="/signup/">Sign up</a> or click <a href="{% url 'login' %}">here</a> to log in.
+                {% endif %}
+            </div>
+        </div>
+
+    </header>
+    <main class="wrapper container">
+        <!-- Carousel -->
+        <div class="row">
+
+        </div>
+        <div>
+            <section>
+                <h2>{% block title %}{% endblock %}</h2>
+                <div>{% block content %}{% endblock %}</div>
+            </section>
+            <section id="techsupport-form"/> {#    {% include "techsupport/report_error.html" %}     #}
+        </div>
+    </main>
+    <hr/>
+    <footer class="container">
+        <div class="col-md-6">
+            (c)2016 Roman Spiridonov
+        </div>
+        <div class="col-md-6" align="right">
+            Published: <time datetime="{% now "Y-m-j" %}" pubdate="pubdate">{% now "DATE_FORMAT" %}</time>
+        </div>
+    </footer>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="{% static 'core/chosen.jquery.js' %}"></script>
+    {% block javascript %}
+    {% if user.is_authenticated %}
+        <script src="{% static 'core/base.js' %}"></script>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>

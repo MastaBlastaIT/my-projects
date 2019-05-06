@@ -1,0 +1,5 @@
+<div class="well">
+    {% include 'tictactoe/game_list_snippet.html' with header="Your turn" games_list=waiting_games %}
+    {% include 'tictactoe/game_list_snippet.html' with header="Opponent's turn" games_list=active_games %}
+    {% include 'tictactoe/game_list_snippet.html' with header="Finished games" games_list=finished_games %}
+</div>

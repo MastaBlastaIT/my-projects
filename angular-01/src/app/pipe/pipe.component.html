@@ -1,0 +1,13 @@
+<div class="card">
+  <h4 class="card-header table-secondary text-center">
+    {{pipeBlock.name}}
+  </h4>
+  <app-card *ngIf="pipeBlock.id === 0" (addCard)="onAddPipe($event, 'card')"></app-card>
+  <app-case *ngIf="pipeBlock.id === 1" (addCase)="onAddPipe($event, 'case')" (selectCase)="onSelectCase($event)"></app-case>
+
+  <div class="card-footer text-center">
+    Pipe applied:
+    <strong *ngIf="pipeBlock.id === 0">{{toOut | maskCard:0 | separateCard}}</strong>
+    <strong *ngIf="pipeBlock.id === 1">{{toOut | maskCase:this.caseType}}</strong>
+  </div>
+</div>

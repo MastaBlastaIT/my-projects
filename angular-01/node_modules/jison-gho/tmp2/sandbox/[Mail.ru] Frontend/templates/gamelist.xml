@@ -1,0 +1,57 @@
+<fest:template xmlns:fest="http://fest.mail.ru">
+    <div class="panel panel-default" id="game-list">
+        <div class="panel-heading panel-title">Game list</div>
+        <div class="panel-body">
+            <table class="table table-hover">
+                <caption>
+                    <div class="text-warning">Click on the game row to continue game.</div>
+                </caption>
+                <thead>
+                    <th>Name</th>
+                    <th>User</th>
+                    <th>Started</th>
+                    <th>Updated</th>
+                    <th>Generations</th>
+                    <th>Ended?</th>
+                    <th>Type</th>
+                </thead>
+                <tr>
+                    <td>My first game</td>
+                    <td>romars</td>
+                    <td>
+                        <div class="js-current-time" />
+                    </td>
+                    <td>
+                        <div class="js-current-time" />
+                    </td>
+                    <td>10</td>
+                    <td>no</td>
+                    <td>n/a</td>
+                </tr>
+                <tr>
+                    <td>My second game</td>
+                    <td>romars</td>
+                    <td>
+                        <div class="js-current-time" />
+                    </td>
+                    <td>
+                        <div class="js-current-time" />
+                    </td>
+                    <td>15</td>
+                    <td>yes</td>
+                    <td>frozen</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- <div class="panel-footer"></div> -->
+
+    <script>
+    	<fest:cdata><![CDATA[
+        	var currentDate = new Date();
+    		$('.js-current-time').append('<time datetime=""'+currentDate.toISOString()+'>'+currentDate.toDateString()+'</time>');
+    		]]>
+    	</fest:cdata>
+
+    </script>
+</fest:template>

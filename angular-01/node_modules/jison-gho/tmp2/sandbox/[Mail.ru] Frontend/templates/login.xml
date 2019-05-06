@@ -1,0 +1,19 @@
+<fest:template xmlns:fest="http://fest.mail.ru">
+    <div class="panel panel-default" id="login">
+        <div class="panel-heading panel-title">Login</div>
+        <div class="panel-body">
+            <form action="/api/v1/auth/signin" method="post">
+                <div class="form-group">
+                    <label for="loginform-email">E-mail: </label>
+                    <input type="email" name="email" id="loginform-email" placeholder="myname@gmail.com" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="loginform-password">Password: </label>
+                    <input type="password" name="password" id="loginform-password" placeholder="Type your password" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div>
+    <!-- <div class="panel-footer"></div> -->
+</fest:template>

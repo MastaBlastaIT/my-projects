@@ -1,0 +1,55 @@
+[![NPM version](https://img.shields.io/npm/v/esprima.svg)](https://www.npmjs.com/package/@gerhobbelt/esprima)
+[![npm download](https://img.shields.io/npm/dm/esprima.svg)](https://www.npmjs.com/package/@gerhobbelt/esprima)
+[![Build Status](https://img.shields.io/travis/GerHobbelt/esprima/master.svg)](https://travis-ci.org/GerHobbelt/esprima)
+[![Coverage Status](https://img.shields.io/codecov/c/github/GerHobbelt/esprima/master.svg)](https://codecov.io/github/GerHobbelt/esprima)
+
+>
+> # NOTE
+>
+> This fork/clone of `esprima` tracks the original closely, but adds support for 
+> parsing [JISON](https://github.com/GerHobbelt/jison) action code blocks, which
+> MAY contain JISON-specific identifiers in the JavaScript code, e.g. `$1`, `@1`,
+> `#1` and `#ID#`.
+>
+ 
+**Esprima** ([esprima.org](http://esprima.org), BSD license) is a high performance,
+standard-compliant [ECMAScript](http://www.ecma-international.org/publications/standards/Ecma-262.htm)
+parser written in ECMAScript (also popularly known as
+[JavaScript](https://en.wikipedia.org/wiki/JavaScript)).
+Esprima is created and maintained by [Ariya Hidayat](https://twitter.com/ariyahidayat),
+with the help of [many contributors](https://github.com/GerHobbelt/esprima/contributors).
+
+### Features
+
+- Full support for ECMAScript 2017 ([ECMA-262 8th Edition](http://www.ecma-international.org/publications/standards/Ecma-262.htm))
+- Sensible [syntax tree format](https://github.com/estree/estree/blob/master/es5.md) as standardized by [ESTree project](https://github.com/estree/estree)
+- Experimental support for [JSX](https://facebook.github.io/jsx/), a syntax extension for [React](https://facebook.github.io/react/)
+- Optional tracking of syntax node location (index-based and line-column)
+- [Heavily tested](http://esprima.org/test/ci.html) (~1500 [unit tests](https://github.com/GerHobbelt/esprima/tree/master/test/fixtures) with [full code coverage](https://codecov.io/github/GerHobbelt/esprima))
+
+### API
+
+Esprima can be used to perform [lexical analysis](https://en.wikipedia.org/wiki/Lexical_analysis) (tokenization) or [syntactic analysis](https://en.wikipedia.org/wiki/Parsing) (parsing) of a JavaScript program.
+
+A simple example on Node.js REPL:
+
+```javascript
+> var esprima = require('esprima');
+> var program = 'const answer = 42';
+
+> esprima.tokenize(program);
+[ { type: 'Keyword', value: 'const' },
+  { type: 'Identifier', value: 'answer' },
+  { type: 'Punctuator', value: '=' },
+  { type: 'Numeric', value: '42' } ]
+  
+> esprima.parseScript(program);
+{ type: 'Program',
+  body:
+   [ { type: 'VariableDeclaration',
+       declarations: [Object],
+       kind: 'const' } ],
+  sourceType: 'script' }
+```
+
+For more information, please read the [complete documentation](http://esprima.org/doc).

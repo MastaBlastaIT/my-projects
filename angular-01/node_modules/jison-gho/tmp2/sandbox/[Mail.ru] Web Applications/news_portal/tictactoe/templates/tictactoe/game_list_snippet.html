@@ -1,0 +1,17 @@
+<h4>{{ header }}</h4>
+
+<div class="list-group">
+    {% for game in games_list %}
+        <a class="list-group-item" href="{% url 'tictactoe:game' pk=game.pk %}">
+        {{ game }}
+        {% if game.status == 'A' %}
+{#            {% if game.next_to_move == user %}Your turn{% else %}Waiting{% endif %}#}
+        {% elif game.status == 'F' %}
+            <strong>{% if game.is_draw %}Draw{% elif game.winner == user %}You won!{% else %}You lost!{% endif %}</strong>
+        {% endif %}
+        <span class="badge">{{ game.move_set.count }}</span></a>
+        </a>
+    {% empty %}
+        <span class="list-group-item">No games available.</span>
+    {% endfor %}
+</div>

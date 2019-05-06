@@ -1,0 +1,19 @@
+{
+  "name": "cool-jison",
+  "version": "0.0.1",
+  "description": "Cool langugae implementation via jison",
+  "main": "index.js",
+  "scripts": {
+    "jison-gho": "node ./node_modules/jison-gho/dist/cli-cjs.js cool.y cool.flex --info -x  -c 1 -o cool-gho.js > cool.output2",
+    "jison": "node ./node_modules/jison/lib/cli.js cool.y cool.flex -t > cool.output"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jison": "0.4.18",
+    "jison-gho": "0.6.1-207"
+  },
+  "devDependencies": {
+    "uglify-js": "^3.1.5"
+  }
+}

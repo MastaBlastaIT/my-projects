@@ -1,0 +1,6 @@
+Django==1.9.5
+gunicorn==19.5.0
+django-widget-tweaks==1.4.1
+django-crispy-forms==1.6.0
+django-debug-toolbar==1.4
+adjacent==1.0.0

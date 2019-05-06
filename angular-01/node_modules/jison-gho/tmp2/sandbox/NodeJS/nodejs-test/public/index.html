@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NodeJS test app</title>
+    <style>
+        #notifications {
+            font-color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>Long-polling chat</h1>
+<div>
+    <form name="chat">
+        <label>Message: <input type="text" name="message" placeholder="Input your message here..."></label>
+        <input type="submit">
+    </form>
+</div>
+
+<p>Notifications:</p>
+<div id="notifications"></div>
+<p>Messages:</p>
+<div id="messages"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src="long-poll.js"></script>
+<script>
+    var publishForm = new PublishForm(document.forms.chat, '/chat');
+    var subscribePane = new SubscribePane(document.getElementById("messages"), '/chat' + '?userid='+Math.random());
+</script>
+
+<script type="text/template" id="template__message">
+    <div><%-message%></div>
+</script>
+
+</body>
+</html>

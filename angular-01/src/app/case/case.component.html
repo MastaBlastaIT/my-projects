@@ -1,0 +1,17 @@
+<form [formGroup]="form">
+  <div class="card-body form-group">
+    <input type="text"
+           formControlName="toPipeText"
+           class="form-control"
+           placeholder="Текст для пайпа"
+           (input)="setPipe()">
+  </div>
+  <div class="card-body form-group">
+    <select class="form-control" (change)="setPipe()" formControlName="selectCase">
+      <option value="default" disabled>Select case type...</option>
+      <option value="upper">upper</option>
+      <option value="lower">lower</option>
+      <option value="title">title</option>
+    </select>
+  </div>
+</form>

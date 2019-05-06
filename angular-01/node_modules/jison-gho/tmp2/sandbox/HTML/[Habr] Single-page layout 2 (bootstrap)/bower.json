@@ -1,0 +1,20 @@
+{
+  "name": "Test",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "RomaRS <romars@phystech.edu>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

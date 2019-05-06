@@ -1,0 +1,76 @@
+<fest:template xmlns:fest="http://fest.mail.ru">
+    <div class="panel panel-default" id="game">
+        <div class="panel-heading panel-title">New game</div>
+        <div class="panel-body">
+            <div class="board" width="200px">
+                <div class="board-row">
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell shaded"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                </div>
+                <div class="board-row">
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                </div>
+                <div class="board-row">
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                    <div class="board-cell"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="panel-footer"></div> -->
+</fest:template>

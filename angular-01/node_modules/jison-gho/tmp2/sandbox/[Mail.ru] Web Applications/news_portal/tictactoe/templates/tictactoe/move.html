@@ -1,0 +1,46 @@
+{% extends 'tictactoe/game.html' %}
+{#{% load staticfiles %}#}
+
+{% block javascript %}
+    {{ block.super }}
+    <script>
+        {% if game.move_set.count|divisibleby:2 %}
+            var move_span = $('<span style="color: blue">X</span>');
+        {% else %}
+            var move_span = $('<span style="color: blue">O</span>');
+        {% endif %}
+    $(document).ready(function(){
+        // handle click on empty squares
+        $('.empty').click(function(){
+            var el = $(this);
+            var x = el.data('x');
+            var y = el.parent().data('y')
+            $('input[name=x]').val(x);  {# put x and y coordinates into the hidden fields #}
+            $('input[name=y]').val(y);
+            $('button[type=submit]').removeClass('hidden');
+            el.children().first().remove();
+            el.append(move_span);
+        });
+    });
+
+    </script>
+{% endblock %}
+
+{% block stylesheet %}
+    {{ block.super }}
+    <style type="text/css">
+        .tictactoe-cell.empty:hover {
+            background-color: #cacabd;
+            cursor: pointer;
+        }
+    </style>
+{% endblock %}
+
+{% block moveform %}
+    {{ block.super }}
+    <form action="" method="post"> {% csrf_token %}
+        {{ form.x.as_hidden }}
+        {{ form.y.as_hidden }}
+        <button type="submit" class="hidden">Submit</button>
+    </form>
+{% endblock %}

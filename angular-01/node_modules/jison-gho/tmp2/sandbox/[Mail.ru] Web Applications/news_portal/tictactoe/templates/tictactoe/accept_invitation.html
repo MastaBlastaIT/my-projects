@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Invitation
+{% endblock %}
+
+{% block content %}
+    <p>Accept invitation from user {{ user_from }}?</p>
+
+    {% if invitation.message %}
+        <blockquote><p>{{ invitation.message }}</p></blockquote>
+    {% endif %}
+
+    <form action="" method="post"> {% csrf_token %}
+        <button type="submit" name="accept" value="ok">Accept</button>
+        <button type="submit" name="deny" value="no">Deny</button>
+    </form>
+
+{% endblock %}
