@@ -1,0 +1,529 @@
+@searchActivateSpeed: 1.5s;
+@whiteWithOpacity_04: rgba(255, 255, 255, 0.4);
+@whiteWithOpacity_08: rgba(255, 255, 255, 0.8);
+@whiteWithOpacity_024: rgba(255, 255, 255, 0.24);
+
+body {
+  background: #1C1C1C;
+  font-family: Roboto;
+  font-style: normal;
+  margin: 0;
+}
+
+.contentWrapper,
+.search {
+  display: flex;
+  height: auto;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.contentWrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+header {
+  width: 148px;
+  height: 28px;
+  left: 646px;
+  margin-top: 80px;
+  order: 1;
+}
+
+.searchResult {
+  width: 90vw;
+  text-align: left;
+  display: none;
+}
+
+.searchLine {
+  max-width: inherit;
+  display: block;
+  width: 628px;
+  height: 74px;
+  margin-top: 5em;
+  text-align: left;
+  border-bottom: 2px solid #FFFFFF;
+  -webkit-transition: width @searchActivateSpeed;
+  -moz-transition: width @searchActivateSpeed;
+  -o-transition: width @searchActivateSpeed;
+  transition: width @searchActivateSpeed;
+}
+
+.searchForm {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.searchInput {
+  position: relative;
+  left: 3em;
+  top: 1em;
+  -webkit-transition: left @searchActivateSpeed;
+  -moz-transition: left @searchActivateSpeed;
+  -o-transition: left @searchActivateSpeed;
+  transition: left @searchActivateSpeed;
+  width: 628px;
+  height: 48px;
+  font-size: 24px;
+  font-weight: 300;
+  color: #FFFFFF;
+  background: url("./img/searchIcon.png") no-repeat;
+  padding-left: 2.5em;
+  background-color: transparent;
+  outline: none;
+  border: none;
+
+  &::placeholder {
+    color: @whiteWithOpacity_04;
+  }
+}
+
+.search {
+  order: 2;
+}
+
+.search_active {
+  &,
+  &__withCrossButton {
+    &,
+    &_hasNoResult,
+    &_hasResult {
+      .search;
+      z-index: 2;
+
+      .historyDisplay() {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        margin: 1em 0 0;
+        cursor: url('./img/cursorPointer.png'), pointer;
+      }
+
+      &.search__history {
+        &_bigger .searchLine:focus-within {
+          .searchHistory .bigger {
+            .historyDisplay();
+          }
+        }
+
+        &_smaller .searchLine:focus-within {
+          .searchHistory .smaller {
+            .historyDisplay();
+          }
+        }
+      }
+
+      .searchInput:focus {
+        left: 0;
+      }
+
+      .searchLine:focus-within {
+        height: auto;
+        text-align: left;
+        width: 90vw;
+        border-bottom: 0;
+
+        .searchForm {
+          border-bottom: 2px solid yellow;
+          padding-bottom: 1.5em;
+        }
+
+        .searchInput {
+          width: 90vw;
+        }
+      }
+    }
+
+    &_hasNoResult,
+    &_hasResult {
+      .searchLine:focus-within + .searchResult {
+        display: block;
+      }
+    }
+
+    &_hasResult {
+      .searchLine:focus-within + .searchResult .negResult {
+        display: none;
+      }
+
+      &:focus-within {
+        ~ footer {
+          position: relative;
+          top: 100%;
+          margin-top: 3em;
+        }
+      }
+
+      &_scroll {
+        .searchLine {
+          overflow: hidden;
+          position: fixed;
+          top: -5em;
+          left: 0;
+          width: 100vw;
+          z-index: 3;
+          background: rgba(28, 28, 28, 0.8);
+          backdrop-filter: blur(4px);
+          text-align: left;
+          -webkit-transition: width @searchActivateSpeed;
+          -moz-transition: width @searchActivateSpeed;
+          -o-transition: width @searchActivateSpeed;
+          transition: width @searchActivateSpeed;
+
+          .searchForm,
+          .searchInput {
+            position: relative;
+            width: inherit;
+          }
+
+          .searchForm {
+            top: -10px;
+            padding-left: 1em;
+          }
+
+          .searchInput::placeholder {
+            color: #FFFFFF;
+          }
+
+          &:focus-within {
+            .crossButton {
+              position: relative;
+              display: inline;
+              margin-left: auto;
+              margin-right: 8vw;
+              -webkit-transition: margin-left @searchActivateSpeed;
+              -moz-transition: margin-left @searchActivateSpeed;
+              -o-transition: margin-left @searchActivateSpeed;
+              transition: margin-left @searchActivateSpeed;
+
+              &,
+              &:active,
+              &:hover {
+                + input {
+                  position: relative;
+                  left: 0;
+                }
+              }
+
+              &:hover {
+                color: #FFFFFF;
+              }
+
+              &:active {
+                color: @whiteWithOpacity_08;
+              }
+            }
+          }
+        }
+
+        ~ header {
+          display: none;
+        }
+
+        ~ footer {
+          position: relative;
+          top: 100%;
+          margin-top: 3em;
+        }
+
+        .searchResult {
+          position: relative;
+          display: inline-block;
+          z-index: 1;
+          margin-top: 5em;
+          padding: 24px;
+
+          h1 {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &_hasNoResult {
+      .searchLine:focus-within + .searchResult {
+        .posResult,
+        .resultFilms {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__withCrossButton {
+    &,
+    &_hasNoResult,
+    &_hasResult {
+      :focus-within {
+        .crossButton {
+          display: inline;
+          margin-left: auto;
+          -webkit-transition: margin-left @searchActivateSpeed;
+          -moz-transition: margin-left @searchActivateSpeed;
+          -o-transition: margin-left @searchActivateSpeed;
+          transition: margin-left @searchActivateSpeed;
+
+          &,
+          &:active,
+          &:hover {
+            + input {
+              position: relative;
+              left: 0;
+            }
+          }
+
+          &:hover {
+            color: #FFFFFF;
+          }
+
+          &:active {
+            color: @whiteWithOpacity_08;
+          }
+        }
+      }
+    }
+  }
+}
+
+.crossButton {
+  display: none;
+  position: relative;
+  width: 48px;
+  height: 48px;
+  line-height: 27px;
+  top: 1.4rem;
+  outline: none;
+  border: none;
+  background: none;
+  color: @whiteWithOpacity_04;
+  font-size: 64px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  cursor: url('./img/cursorPointer.png'), pointer;
+}
+
+.bigger,
+.smaller {
+  display: none;
+}
+
+.searchHistory {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.searchHistory a {
+  padding: 6px 15px;
+  margin: 0 8px 8px 0;
+  background: @whiteWithOpacity_08;
+  line-height: 24px;
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.searchHistory a:hover {
+  background: #FFFFFF;
+}
+
+.searchHistory a:active {
+  background: @whiteWithOpacity_04;
+}
+
+.resultText {
+  color: #FFFFFF;
+}
+
+.resultFilms {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.resultFilms .filmData {
+  width: 302px;
+  height: 454px - 20px;
+  margin: 0 24px 24px 0;
+  border-radius: 12px;
+  background: @whiteWithOpacity_024;
+}
+
+.filmName {
+  font-weight: bold;
+  line-height: 36px;
+  font-size: 24px;
+}
+
+.filmGenreAndYear {
+  font-weight: normal;
+  line-height: 24px;
+  font-size: 16px;
+}
+
+.stillLoading {
+  .filmName {
+    position: relative;
+    left: 20px;
+    top: 330px;
+    width: 246px;
+    height: 24px;
+    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+  }
+
+  .filmGenreAndYear {
+    position: relative;
+    left: 20px;
+    top: 330px;
+    width: 156px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 2px;
+  }
+}
+
+.dataLoaded,
+.descriptionReady {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+
+  .filmImg {
+    width: inherit;
+    height: inherit;
+    border-radius: 12px;
+    position: absolute;
+    display: inline;
+    z-index: 3;
+    left: 0;
+  }
+
+  .filmGenreAndYear {
+    display: flex;
+    width: 302px - 40px;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+  }
+
+  .filmName {
+    margin-top: auto;
+    width: 260px;
+  }
+
+  .filmGenre {
+    width: 168px;
+  }
+
+  .filmGenreAndYear,
+  .filmName,
+  .filmRating {
+    position: relative;
+  }
+
+  .filmGenreAndYear,
+  .filmName {
+    left: 20px;
+  }
+  color: @whiteWithOpacity_024;
+  cursor: url('./img/cursorPointer.png'), pointer;
+}
+
+.dataLoaded {
+  .filmName,
+  .filmRating {
+    color: #FFFFFF;
+  }
+
+  .filmGenreAndYear,
+  .filmName,
+  .filmRating {
+    display: none;
+  }
+
+  .filmRating {
+    font-weight: normal;
+    line-height: 36px;
+    font-size: 24px;
+  }
+
+  .blurBlock {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 12px;
+  }
+}
+
+.dataLoaded:hover {
+  .blurBlock {
+    display: inline-block;
+    z-index: 2;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 26.43%, rgba(0, 0, 0, 0.8) 72.41%);
+    backdrop-filter: blur(2px);
+    border-radius: 12px;
+  }
+
+  .filmImg {
+    z-index: 1;
+  }
+
+  .filmRating {
+    display: block;
+    z-index: 3;
+  }
+
+  .filmName {
+    display: block;
+    z-index: 3;
+  }
+
+  .filmGenreAndYear {
+    display: flex;
+    color: @whiteWithOpacity_04;
+    z-index: 3;
+  }
+}
+
+.rate {
+  &_good,
+  &_high,
+  &_notGood {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 16px;
+  margin: auto auto 0;
+  order: 3;
+}
+
+.tinkoffSign {
+  font-weight: normal;
+  line-height: normal;
+  font-size: 12px;
+  color: @whiteWithOpacity_04;
+}

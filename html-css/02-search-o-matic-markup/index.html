@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <title>TFS:Task02</title>
+</head>
+
+<body>
+  <div class="contentWrapper">
+    <!-- states:
+    1. search,
+    2.1. search_active,
+    2.2. search_active__withCrossButton: {
+        2.*.a. _hasResult {
+          _scroll
+        }
+        2.*.b. _hasNoResult
+    }
+
+    add history:
+    search__history_bigger,
+    search__history_smaller
+  -->
+    <div class="search_active__withCrossButton_hasResult search__history_bigger">
+      <div class="searchLine">
+        <form autocomplete="off" class="searchForm">
+          <input class="crossButton" type="button" id="clearButton" value="+">
+
+          <input class="searchInput" type="text" name="findFilm" id="findFilm" placeholder="Поиск фильмов по жанрам и актерам">
+        </form>
+
+        <div class="searchHistory">
+          <div class="smaller">
+            <a href="#">Джуно</a>
+            <a href="#">300 спартанцев</a>
+            <a href="#">Джерард Батлер</a>
+            <a href="#">Николас Кейдж</a>
+          </div>
+
+          <div class="bigger">
+            <a href="#">Как я встретил вашу маму</a>
+            <a href="#">Том Хэнкс</a>
+            <a href="#">Райан Гослинг</a>
+            <a href="#">Драйв</a>
+            <a href="#">Бриджит Джонс</a>
+            <a href="#">Брэдли Купер</a>
+            <a href="#">Бойцовский клуб</a>
+            <a href="#">Молчание ягнят</a>
+            <a href="#">Энтони Хопкинс</a>
+            <a href="#">Адам Сэндлер</a>
+            <a href="#">Бен Аффлек</a>
+            <a href="#">Изчезнувшая</a>
+            <a href="#">Миссия невыполнима</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="searchResult">
+        <h1 class="resultText posResult">Нашли <span id="countFilms">82</span> фильма</h1>
+
+        <h1 class="resultText negResult">Мы не поняли о чем речь ¯\_(ツ)_/¯</h1>
+
+        <div class="resultFilms">
+          <div class="filmData">
+            <div class="stillLoading">
+              <div class="filmName"></div>
+
+              <div class="filmGenreAndYear"></div>
+            </div>
+          </div>
+
+          <div class="filmData">
+            <div class="descriptionReady">
+              <div class="filmName">
+                <span>Таксист</span>
+              </div>
+
+              <div class="filmGenreAndYear">
+                <div class="filmGenre">
+                  <span>Драма, триллер</span>
+                </div>
+
+                <div class="filmYear">
+                  <span>1976</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="filmData">
+            <div class="dataLoaded">
+              <div class="blurBlock">
+              </div>
+
+              <img class="filmImg" src="./img/ragingBull.jpg">
+
+              <div class="filmName">
+                <div class="filmRating">
+                  <p>
+                    <img class="rate_good" src="./img/goodRate.png">
+
+                    <span>7.8</span>
+                  </p>
+                </div>
+
+                <span>Бешеный бык</span>
+              </div>
+
+              <div class="filmGenreAndYear">
+                <div class="filmGenre">
+                  <span>Драма, биография</span>
+                </div>
+
+                <div class="filmYear">
+                  <span>1980</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="filmData">
+            <div class="stillLoading">
+              <div class="filmName"></div>
+
+              <div class="filmGenreAndYear"></div>
+            </div>
+          </div>
+
+          <div class="filmData">
+            <div class="dataLoaded">
+              <div class="blurBlock">
+              </div>
+
+              <img class="filmImg" src="./img/onceUpponInAmerica.jpg">
+
+              <div class="filmName">
+                <div class="filmRating">
+                  <p>
+                    <img class="rate_high" src="./img/highRate.png">
+
+                    <span>8.3</span>
+                  </p>
+                </div>
+
+                <span>Однажды в Америке</span>
+              </div>
+
+              <div class="filmGenreAndYear">
+                <div class="filmGenre">
+                  <span>Гангстерский фильм</span>
+                </div>
+
+                <div class="filmYear">
+                  <span>1984</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="filmData">
+            <div class="stillLoading">
+
+              <div class="filmName"></div>
+
+              <div class="filmGenreAndYear"></div>
+            </div>
+          </div>
+
+          <div class="filmData">
+            <div class="descriptionReady">
+              <div class="filmName">
+                <span>Схватка</span>
+              </div>
+
+              <div class="filmGenreAndYear">
+                <div class="filmGenre">
+                  <span>Боевик</span>
+                </div>
+
+                <div class="filmYear">
+                  <span>1995</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="filmData">
+            <div class="descriptionReady">
+              <div class="filmName">
+                <span>Знакомство с родителями</span>
+              </div>
+
+              <div class="filmGenreAndYear">
+                <div class="filmGenre">
+                  <span>Комедия</span>
+                </div>
+
+                <div class="filmYear">
+                  <span>2000</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="filmData">
+            <div class="stillLoading">
+
+              <div class="filmName"></div>
+
+              <div class="filmGenreAndYear"></div>
+            </div>
+          </div>
+
+          <div class="filmData">
+            <div class="stillLoading">
+
+              <div class="filmName"></div>
+
+              <div class="filmGenreAndYear"></div>
+            </div>
+          </div>
+
+          <div class="filmData">
+            <div class="dataLoaded">
+              <div class="blurBlock">
+              </div>
+
+              <img class="filmImg" src="./img/meetingFockers.jpg">
+              <div class="filmName">
+                <div class="filmRating">
+                  <p>
+                    <img class="rate_good" src="./img/goodRate.png">
+
+                    <span>7.1</span>
+                  </p>
+                </div>
+                <span>Знакомство с Факерами</span>
+              </div>
+
+              <div class="filmGenreAndYear">
+                <div class="filmGenre">
+                  <span>Комедия</span>
+                </div>
+
+                <div class="filmYear">
+                  <span>2004</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="filmData">
+            <div class="dataLoaded">
+              <div class="blurBlock">
+              </div>
+
+              <img class="filmImg" src="./img/theFamily.jpg">
+              <div class="filmName">
+                <div class="filmRating">
+                  <p>
+                    <img class="rate_good" src="./img/goodRate.png">
+
+                    <span>6.9</span>
+                  </p>
+                </div>
+                <span>Малавита</span>
+              </div>
+
+              <div class="filmGenreAndYear">
+                <div class="filmGenre">
+                  <span>Чёрная комедия</span>
+                </div>
+
+                <div class="filmYear">
+                  <span>2013</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="filmData">
+            <div class="dataLoaded">
+              <div class="blurBlock">
+              </div>
+
+              <img class="filmImg" src="./img/dirtyGrandpa.jpg">
+              <div class="filmName">
+                <div class="filmRating">
+                  <p>
+                    <img class="rate_notGood" src="./img/notGoodRate.png">
+
+                    <span>6.1</span>
+                  </p>
+                </div>
+                <span>Дедушка лёгкого поведения</span>
+              </div>
+
+              <div class="filmGenreAndYear">
+                <div class="filmGenre">
+                  <span>Комедия</span>
+                </div>
+
+                <div class="filmYear">
+                  <span>2016</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <header>
+      <img src="./img/logoTP.png" alt="Тинькофф Прокат Logo">
+    </header>
+
+    <footer>
+      <p class="tinkoffSign">
+        &copy 2019 Тинькофф Прокат
+      </p>
+    </footer>
+  </div>
+</body>
+
+</html>

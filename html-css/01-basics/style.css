@@ -1,0 +1,164 @@
+.contentWrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-indent: 30px;
+  text-align: justify;
+}
+
+ul,
+ol {
+  line-height: 25px;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  margin-right: 6px;
+  content: "\2022";
+  color: red;
+}
+
+.testTable {
+  width: 550px;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.testTable td,
+.testTable tr,
+.testTable th {
+  border: 1px solid black;
+}
+
+.bodyRow th {
+  width: 80px;
+  text-align: left;
+  background-color: #ccc;
+}
+
+.headRow th {
+  background-color: #16b78c;
+}
+
+.footRow {
+  background-color: #fc5d7f;
+}
+
+.footRow th {
+  text-align: left;
+}
+
+.tableDefinition {
+  padding: 10px;
+  background: #ccc url(./img/quoteBackg.jpeg);
+  text-align: justify;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.tableDefinition i:before {
+  content: open-quote;
+  font-weight: bold;
+  font-size: 25px;
+  color: blue;
+}
+
+.tableDefinition i:after {
+  content: close-quote;
+  font-weight: bold;
+  font-size: 25px;
+  color: blue;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.ciceroImg {
+  display: block;
+  margin: 0 10px;
+  float: right;
+}
+
+.tableImg {
+  display: block;
+  margin-left: 20px;
+  float: right;
+  border: 3px dotted blue;
+}
+
+.imgWithList {
+  margin-bottom: 25px;
+}
+
+.tableHtml {
+  display: block;
+  margin: 0em 2.5em;
+  float: left;
+  border: 4px ridge orange;
+}
+
+.lookSpan {
+  font-size: 1.5em;
+  color: rgb(46, 130, 45);
+}
+
+.submitForm div {
+  margin-top: 15px;
+}
+
+.submitButton {
+  margin: 15px 200px 0;
+}
+
+.questionLabel {
+  width: 200px;
+  margin-right: 10px;
+  float: left;
+  text-align: right;
+}
+
+input[type="number"],
+input[type="text"] {
+  width: 150px;
+}
+
+footer {
+  width: 40%;
+  margin: 20px auto;
+  padding: 0 20px;
+  border: 1px dashed black;
+  float: left;
+}
+
+.aboutMe {
+  display: flex;
+  align-items: center;
+}
+
+.leftCol,
+.rightCol {
+  margin: 0 5px;
+  text-align: center;
+}
+
+.aboutMePhoto {
+  border-radius: 100px;
+  border: 1px groove lightblue;
+}
+
+.rightCol div {
+  margin: 20px 0;
+}

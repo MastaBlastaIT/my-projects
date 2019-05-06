@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="style.css">
+
+  <title>TFS:Task01</title>
+</head>
+
+<body>
+  <div class="contentWrapper">
+    <h1>Учимся работать с &lt;HTML&gt;</h1>
+
+    <article>
+      <h3>The standard <i>Lorem Ipsum</i> passage, used since the 1500s</h3>
+
+      <p>
+        <strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+
+      <h3>Section 1.10.32 of <em>"de Finibus Bonorum et Malorum"</em>, written by
+        <a href="https://en.wikipedia.org/wiki/Cicero" target="_blank">Cicero</a>
+        in 45 BC
+      </h3>
+
+      <p>
+        <img src="./img/cicero.jpg" alt="Cicero" class="ciceroImg" height="150">
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+        quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+        aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+        qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam
+        aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea
+        commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui
+        dolorem eum fugiat quo voluptas nulla pariatur?
+      </p>
+    </article>
+
+    <div>
+      <h3>Now we're testing other <u>HTML tags</u></h3>
+
+      <p>
+        So what is <b>Lorem Ipsum</b>? Let's use
+        <a href="https://en.wikipedia.org/wiki/Lorem_ipsum" target="_blank">Wikipedia</a>
+      </p>
+
+      <p>
+        I can use <b>&lt;sup&gt;</b> and <b>&lt;sub&gt;</b> tags for equation representation (put them in an <i><u>unordered list</u></i>):
+      </p>
+
+      <ul>
+        <li>x<sup>3</sup> - 3x<sup>2</sup> - 13x + 15 = 0</li>
+        <li>log<sub>2</sub>(5 + 3log<sub>2</sub>(x - 3)) = 3</li>
+      </ul>
+    </div>
+
+    <div>
+      <p>
+        So now we gonna use <b>&lt;table&gt;</b> tag. Let's remember what a table is:
+      </p>
+
+      <hr>
+
+      <blockquote class="tableDefinition clearfix">
+        <img src="./img/tableSample.jpg" alt="Table Sample from Wiki" class="tableImg" width="380" height="219">
+        <i>A <strong>table</strong> is an arrangement of data in rows and columns,
+          or possibly in a more complex structure. Tables are widely used in communication, research, and data analysis. Tables appear in print media, handwritten notes,
+          computer software, architectural ornamentation, traffic signs, and many other places. The precise conventions and terminology for describing tables vary
+          depending on the context. Further, tables differ significantly in variety, structure, flexibility, notation, representation and use. In books and technical
+          articles, tables are typically presented apart from the main text in numbered and captioned floating blocks.</i>
+      </blockquote>
+
+      <hr>
+    </div>
+
+    <div>
+      <h3>What kind of tags does table use? Select a few that we'll use:</h3>
+
+      <div class="imgWithList">
+        <img alt="HTML table sample" src="./img/tableHtml.jpg" class="tableHtml" width="347" height="170">
+
+        <ol>
+          <li>&lt;tr&gt;...&lt;/tr&gt;</li>
+          <li>&lt;th&gt;...&lt;/th&gt;</li>
+          <li>&lt;td&gt;...&lt;/td&gt;</li>
+          <li>&lt;thead&gt;...&lt;/thead&gt;</li>
+          <li>&lt;tfoot&gt;...&lt;/tfoot&gt;</li>
+          <li>&lt;tbody&gt;...&lt;/tbody&gt;</li>
+          <li>&lt;caption&gt;...&lt;/caption&gt;</li>
+        </ol>
+      </div>
+
+      <table class="testTable">
+        <caption>
+          <span class="lookSpan">LOOK!</span> I am the &lt;caption&gt; of a test table
+        </caption>
+
+        <thead>
+          <tr class="headRow">
+            <td></td>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+            <th>Header 4</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="bodyRow">
+            <th>Row 1 Header</th>
+            <td>Cell(1;1)</td>
+            <td>Cell(1;2)</td>
+            <td>Cell(1;3)</td>
+            <td>Cell(1;4)</td>
+          </tr>
+
+          <tr class="bodyRow">
+            <th>Row 2 Header</th>
+            <td>Cell(2;1)</td>
+            <td>Cell(2;2)</td>
+            <td>Cell(2;3)</td>
+            <td>Cell(2;4)</td>
+          </tr>
+
+          <tr class="bodyRow">
+            <th>Row 3 Header</th>
+            <td>Cell(3;1)</td>
+            <td>Cell(3;2)</td>
+            <td>Cell(3;3)</td>
+            <td>Cell(3;4)</td>
+          </tr>
+        </tbody>
+
+        <tfoot>
+          <tr class="footRow">
+            <th><i>Just Footer Header</i></th>
+            <td><i>Foot Cell 1</i></td>
+            <td><i>Foot Cell 2</i></td>
+            <td><i>Foot Cell 3</i></td>
+            <td><i>Foot Cell 4</i></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div>
+      <h3>Please leave your feedback about article in this &lt;form&gt;</h3>
+
+      <form autocomplete="off" action="#" method="post" class="submitForm">
+        <div>
+          <label for="yourName" class="questionLabel">Your name</label>
+          <input type="text" name="yourName" id="yourName" placeholder="input your name here..." required>
+        </div>
+
+        <div>
+          <label for="yourAge" class="questionLabel">Your age</label>
+          <input type="number" name="yourAge" id="yourAge" placeholder="input your age here..." min="10" max="90" required>
+        </div>
+
+        <div>
+          <label class="questionLabel" for="yourCountry">Your country</label>
+          <select id="yourCountry">
+            <option disabled selected>select your country...</option>
+            <option>Russia</option>
+            <option>United States</option>
+            <option>United Kingdom</option>
+            <option>Germany</option>
+            <option>China</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="questionLabel">Do you like this article?</label>
+          <label for="yes">Yes</label>
+          <input type="radio" name="like" id="yes">
+          <label for="no">No</label>
+          <input type="radio" name="like" id="no">
+        </div>
+
+        <div>
+          <label class="questionLabel">Which part do you like?</label>
+          <label for="loremIpsum">Lorem Ipsum</label>
+          <input type="checkbox" name="multiLike" id="loremIpsum">
+          <label for="testing">Testing tags</label>
+          <input type="checkbox" name="multiLike" id="testing">
+          <label for="quote">Blockquote</label>
+          <input type="checkbox" name="multiLike" id="quote">
+          <label for="tbl">Table</label>
+          <input type="checkbox" name="multiLike" id="tbl">
+        </div>
+
+        <input type="submit" value="Submit" class="submitButton">
+      </form>
+    </div>
+
+    <footer>
+      <h2>About me</h2>
+
+      <div class="aboutMe">
+        <div class="leftCol">
+          <a target="_blank" href="https://t.me/IlyaTishkov">
+            <img src="./img/myPhoto.jpeg" alt="My photo" class="aboutMePhoto" width="200" height="200">
+          </a>
+        </div>
+
+        <div class="rightCol">
+          <div>
+            <span><strong>Tishkov<br>Ilya<br>Vladimirovich</strong></span>
+          </div>
+
+          <div>
+            <span><i>Tinkoff Fintech School<br>Frontend class<br>student</i></span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
