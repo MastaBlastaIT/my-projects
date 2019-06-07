@@ -29,14 +29,14 @@ window.onload = () => {
 
     sortForm(payForm);
 
-    //crypto.setAttribute("src", "https://www.gateline.net/glwidget/src/js/crypto-js.min.js");
+    //crypto.setAttribute("src", "https://www.gateline.net/glwidget/js/crypto-js.min.js");
     crypto.setAttribute("src", "./src/js/crypto-js.min.js");
     crypto.setAttribute("type", "text/javascript");
     payForm.parentNode.insertBefore(crypto, payForm);
 
     let styles = document.createElement("link");
     styles.setAttribute("rel", "stylesheet");
-    //styles.setAttribute("href", "https://www.gateline.net/glwidget/src/css/style.css");
+    //styles.setAttribute("href", "https://www.gateline.net/glwidget/css/style.css");
     styles.setAttribute("href", "./src/css/style.css");
     insertAfter(styles, crypto);
 
@@ -65,7 +65,17 @@ function sendRequest() {
 
     let loader = document.querySelector('.loader');
 
-    payForm.action = payForm.getAttribute("form-type") === "sandbox" ? "https://simpleapi.sandbox.gateline.net:18610/pay" : "https://simpleapi.gateline.net/pay";
+    switch (payForm.getAttribute("form-type")) {
+        case "sandbox":
+            payForm.action = "https://simpleapi.sandbox.gateline.net:18610/pay";
+            break;
+        case "prod":
+            payForm.action = "https://simpleapi.gateline.net/pay";
+            break;
+        default:
+            console.error(`WRONG FORM-TYPE! MUST BE "prod" or "sandbox"`);
+            alert(`Неверно указан атрибут form-type: требуется "prod" или "sandbox"`);
+    }
 
     let siteKey = payForm.querySelector("input[isToken]").value;
 
@@ -82,13 +92,15 @@ function sendRequest() {
     checksumNode.value = encryptedMessage;
     payForm.insertBefore(checksumNode, payForm.lastElementChild);
 
-    popupBackground.style.display = "block";
-    payForm.submit();
+    if (payForm.action.match(/^https:\/\/simpleapi\..*gateline\.net(\:18610|)\/pay$/)) {
+        popupBackground.style.display = "block";
+        payForm.submit();
 
-    loader.classList.add("loader_animate");
-    iframe.onload = () => {
-        loader.classList.remove("loader_animate");
-    };
+        loader.classList.add("loader_animate");
+        iframe.onload = () => {
+            loader.classList.remove("loader_animate");
+        };
+    }
 }
 
 function listener(event) {

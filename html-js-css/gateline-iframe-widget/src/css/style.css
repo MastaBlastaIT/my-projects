@@ -43,41 +43,6 @@
     }
 }
 
-.payForm {
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-    justify-content: space-between;
-    height: auto;
-    margin: 0;
-}
-
-.payForm input {
-    margin: 0.25em 0;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-.orange-button {
-    box-sizing: border-box;
-    border: 0;
-    background-color: #FF9212;
-    text-decoration: none;
-    text-align: center;
-    color: #fff;
-    text-transform: uppercase;
-    border-radius: 4px
-}
-
-.orange-button:hover {
-    background-color: #AF5D29
-}
-
-.orange-button:active {
-    background-color: #FF8A40
-}
-
 .loader {
     display: none;
     z-index: 100;

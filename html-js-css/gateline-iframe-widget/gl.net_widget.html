@@ -4,6 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Test Widget</title>
+    <link rel="stylesheet" href="./src/css/form.css">
 </head>
 
 <body>
@@ -13,16 +14,23 @@
 
     sandbox - тестовая среда
   -->
+
     <script src="./src/js/script.js"></script>
     <form form-type="sandbox" onsubmit="sendRequest();" class="payForm">
         <!--Начало блока с данными заказа-->
-        <input type="text" name="amount" placeholder="Сумма заказа" required><!--Обязательное поле-->
-        <input type="text" name="description" placeholder="Описание заказа" required><!--Обязательное поле-->
-        <input type="text" name="merchant_order_id" placeholder="Номер заказа">
+            <!--Обязательные поля-->
+        <input type="text" name="amount" placeholder="Сумма заказа" required value="1.00"><!--сумма заказа-->
+        <input type="text" name="description" placeholder="Описание заказа" required value="оплата заказ 123"><!--описание заказа-->
+            <!--Обязательные поля-->
+
+        <input type="text" name="merchant_order_id" placeholder="Номер заказа" value="123"><!--номер заказа-->
+        <input type="text" name="email" placeholder="email" value="email@email.ru"><!--email-->
+        <input type="text" name="locale" placeholder="locale" value="ru"><!--язык платежной формы-->
         <!--Конец блока с данными заказа-->
-        <input type="hidden" name="site" value="glnet_demo">
-        <input type="hidden" value="2de639e455ad2299792978ef6a8f0f5c" isToken>
-        <input type="submit" value="Открыть виджет для оплаты" class="orange-button">
+
+        <input type="hidden" name="site" value="glnet_demo"><!--uid сайта (выдаётся клиенту при подключении)-->
+        <input type="hidden" value="2de639e455ad2299792978ef6a8f0f5c" isToken><!--ключ сайта (выдаётся клиенту при подключении)-->
+        <input type="submit" value="Открыть виджет для оплаты" class="orange-button"><!--кнопка-->
     </form>
 </body>
 
