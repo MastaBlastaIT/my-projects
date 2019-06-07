@@ -2,31 +2,28 @@
 <html>
 
 <head>
-  <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
-  <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
-  <link rel="stylesheet" href="./style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Test Widget</title>
 </head>
 
 <body>
+    <!--
+    Замените form-type в атрибутах тэга <form> на prod, чтобы использовать виджет в боевой среде
+    <form ... form-type="prod" ...>
 
-  <form id='payForm' enctype='multipart/form-data' action='https://simpleapi.sandbox.gateline.net:18610/pay' method='POST' target='myPopup'>
-    <input style='display:none' id='amount' name='amount' value='3.00'>
-    <input style='display:none' id='description' name='description' value='Оплата заказа'>
-    <input style='display:none' id='site' name='site'>
-    <input style='display:none' id='checksum' name='checksum'>
-  </form>
-
-  <div class='wpb_single_image wpb_content_element vc_align_center'>
-    <button class='invicta_button invicta-icon_position-left' onclick='SendRequest()' id='SendButton'>Открыть виджет для оплаты</button>
-  </div>
-
-  <div class='popup-back' id='popupBack'>
-    <div class='my-popup'>
-      <iframe frameborder='0' scrolling='no' class='my-popup' id='myPopup' name='myPopup'></iframe>
-    </div>
-  </div>
-
-  <script src='./script.js'></script>
+    sandbox - тестовая среда
+  -->
+    <script src="./src/js/script.js"></script>
+    <form form-type="sandbox" onsubmit="sendRequest();" class="payForm">
+        <!--Начало блока с данными заказа-->
+        <input type="text" name="amount" placeholder="Сумма заказа" required><!--Обязательное поле-->
+        <input type="text" name="description" placeholder="Описание заказа" required><!--Обязательное поле-->
+        <input type="text" name="merchant_order_id" placeholder="Номер заказа">
+        <!--Конец блока с данными заказа-->
+        <input type="hidden" name="site" value="glnet_demo">
+        <input type="hidden" value="2de639e455ad2299792978ef6a8f0f5c" isToken>
+        <input type="submit" value="Открыть виджет для оплаты" class="orange-button">
+    </form>
 </body>
 
 </html>
