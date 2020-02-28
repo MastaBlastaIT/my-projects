@@ -1,5 +1,0 @@
-Usage: 
-```
-npm install
-grunt
-```

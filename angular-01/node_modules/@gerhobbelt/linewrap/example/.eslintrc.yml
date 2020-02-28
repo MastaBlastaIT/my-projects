@@ -1,7 +1,0 @@
-env:
-  browser: true
-  commonjs: true
-  node: true
-rules:
-  no-unused-vars: 
-    warn

@@ -1,7 +1,0 @@
-<fest:template xmlns:fest="http://fest.mail.ru">
-    <div class="panel panel-default" id="main">
-        <div class="panel-heading panel-title">Main</div>
-        <div class="panel-body"></div>
-    </div>
-    <!-- <div class="panel-footer"></div> -->
-</fest:template>
