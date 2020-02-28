@@ -1,4 +1,4 @@
-const liveServer = require('live-server');
+const liveServer = require("live-server");
 
 const params = {
   port: 8000, // Set the server port. Defaults to 8080.

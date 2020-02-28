@@ -1,6 +1,8 @@
 <?php
 
-$goto = "'/'order'/'" + $order_id + "/cancel;";//or use settle for clearing
+
+$order_id = '123';
+$goto = "'/'order'/'" . $order_id . "/cancel;";//or use settle for clearing
 
 # OR
 # $goto = "'/'order'/'" + $order_id + "/settle;";
